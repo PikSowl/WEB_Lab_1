@@ -101,4 +101,57 @@ while(10 >= $sum){
 }
 echo $count, "\n";
 
+echo "\n15.\n";
+function printStringReturnNumber(): int
+{
+    echo "help\n";
+    return 10;
+}
+$my_num = printStringReturnNumber();
+echo $my_num, "\n";
+
+echo "\n16.\n";
+function increaseEnthusiasm($str): string
+{
+    return $str.='!';
+}
+echo increaseEnthusiasm("aaa"), "\n";
+function repeatThreeTimes($str) : string
+{
+    return $str.='!';
+}
+echo repeatThreeTimes("AAA"), "\n";
+echo increaseEnthusiasm(repeatThreeTimes("AAAAAA")), "\n";
+function cut($str, $len = 10): string
+{
+    $ans = '';
+    for($i=0; $len > $i; $i++){
+        $ans[$i] = $str[$i];
+    }
+    return $ans;
+}
+echo cut("I'm so tired of this, it's unbelievable, like I want to go outside, but no I must complete trivial, but very large task, AAAAAAA...", 6), "\n";
+$mas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+function output($array, $count = 0): null
+{
+    echo $array[$count], ' ';
+    $count++;
+    if (count($array)>$count) output($array, $count);
+    return null;
+}
+output($mas);
+echo "\n";
+$int = 123456;
+function simplifier($int): int
+{
+    $ans = 0;
+    while (0 < $int)
+    {
+        $ans += $int%10;
+        $int = floor($int /= 10);
+    }
+    if (10 < $ans) return simplifier($ans);;
+    return $ans;
+}
+echo simplifier($int), "\n";
 
