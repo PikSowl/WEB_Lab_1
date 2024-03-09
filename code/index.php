@@ -118,7 +118,7 @@ function increaseEnthusiasm($str): string
 echo increaseEnthusiasm("aaa"), "\n";
 function repeatThreeTimes($str) : string
 {
-    return $str.='!';
+    return $str.=$str.=$str;
 }
 echo repeatThreeTimes("AAA"), "\n";
 echo increaseEnthusiasm(repeatThreeTimes("AAAAAA")), "\n";
@@ -154,4 +154,5 @@ function simplifier($int): int
     return $ans;
 }
 echo simplifier($int), "\n";
+
 
