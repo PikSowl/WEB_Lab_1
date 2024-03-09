@@ -1,0 +1,7 @@
+(docker-compose build) -and (docker-compose up -d)
+
+docker exec -it web_lab_12-php-1 /bin/bash
+cd /
+ls
+cd code
+php index.php
