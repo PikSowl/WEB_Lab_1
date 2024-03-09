@@ -246,9 +246,13 @@ while (true) {
 $arr = [4,2,565];
 if (3 == count($arr)) echo $arr[0] + $arr[1] + $arr[2], "\n";
 
-
-
-
+echo "\n19.\n";
+$x = '';
+for($i = 0; 20 > $i; $i++)
+{
+    $x .= 'x';
+    echo $x, "\n";
+}
 
 
 
