@@ -248,11 +248,45 @@ if (3 == count($arr)) echo $arr[0] + $arr[1] + $arr[2], "\n";
 
 echo "\n19.\n";
 $x = '';
-for($i = 0; 20 > $i; $i++)
+for($i = 0; 21 > $i; $i++)
 {
     $x .= 'x';
     echo $x, "\n";
 }
+
+echo "\n20.\n";
+$array = [2,3,4,856,2 , 34 ,7 ,143, 8];
+echo round(array_sum($array)/count($array),3),"\n";
+echo (1+100)*50,"\n";
+//math knowledge is bringing me down
+$arrPowered = [];
+function power($array, $arrPowered, $i = 0): array
+{
+    $arrPowered[] = pow($array[$i],2);
+    if (count($array)>$i + 1) return power($array, $arrPowered, $i+1);
+    return  $arrPowered;
+}
+output(power($array, $arrPowered));
+echo "\n";
+function goingLetters($alphabet = [], $i = 1, $l= 'a'): array
+{
+    $alphabet[$l] = $i;
+    if (26 > $i) return goingLetters($alphabet, $i+1, chr(ord($l)+1));
+    return $alphabet;
+}
+$alphabet = goingLetters();
+while ($pair = current($alphabet)) {
+    echo key($alphabet),'=>', $pair, "\n";
+    next($alphabet);
+}
+$numString = '1234567890';
+function numMagic($numString , $i = 0, $ans = 0): int
+{
+    $ans += ($numString[$i*2]*10 + $numString[$i*2+1]);
+    if ($i < 4) return numMagic($numString, $i +1, $ans);
+    return $ans;
+}
+echo numMagic($numString), "\n";
 
 
 
