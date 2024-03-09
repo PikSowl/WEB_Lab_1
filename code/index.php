@@ -8,7 +8,7 @@ $order .= ", a number six with extra dip";
 // Don't change the line below
 echo "\nYour order is: $very_bad_unclear_name.";
 
-echo "\n2.\n";
+echo "\n\n2.\n";
 $lyuboye_imya = -1;
 echo "$lyuboye_imya\n";
 $lyubim_imenem = 1.1;
@@ -18,3 +18,9 @@ $last_month = 1187.23;
 $this_month = 1089.98;
 echo $last_month - $this_month, "\n";
 
+echo "\n11.\n";
+$num_languages = 4;
+$months = 11;
+$days = $months * 16;
+$days_per_language = $days / $num_languages;
+echo $days_per_language, "\n";
