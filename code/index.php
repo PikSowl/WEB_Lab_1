@@ -70,7 +70,8 @@ $randArr = [];
 for($i=0; 10 > $i; $i++){
     $randArr[$i] = rand();
 }
-var_dump($randArr);
+output($randArr);
+echo "\n";
 echo "Abs) \n";
 $a = 3;
 $b = 100;
@@ -82,7 +83,8 @@ $numbers = [1, 2, -1, -2, 3, -3];
 for($i=0; count($numbers) > $i; $i++){
     $numbers[$i] = abs($numbers[$i]);
 }
-var_dump($numbers);
+output($numbers);
+echo "\n";
 echo "Other) \n";
 $larva = 64;
 $div = 0;
@@ -154,5 +156,62 @@ function simplifier($int): int
     return $ans;
 }
 echo simplifier($int), "\n";
+
+echo "\n17.\n";
+$Xmas = [];
+$Xmas[] = 'x';
+for($i = 0; 10 > $i + 1; $i++)
+{
+    $Xmas[$i+1] = $Xmas[$i];
+    $Xmas[$i+1].= 'x';
+}
+output($Xmas);
+echo "\n";
+function arrayFill($copy, $pasteNum): array
+{
+    $arr = [];
+    for (;0 < $pasteNum;$pasteNum--)
+    {
+        $arr[] = $copy;
+    }
+    return  $arr;
+}
+output(arrayFill('OM', 10));
+echo "\n";
+$arr2D = [[1, 2, 3], [4, 5], [6]];
+$ans = 0;
+foreach($arr2D as $arr)
+{
+    foreach ($arr as $num) $ans += $num;
+}
+echo $ans, "\n";
+$x = 1;
+$arr2D = [];
+while(9 > $x){
+    $arr = [];
+    for(;0 != $x%3;$x++) $arr[] = $x;
+    $arr[] = $x;
+    $arr2D[] = $arr;
+    $x++;
+}
+foreach ($arr2D as $arr)
+{
+    echo "[";
+    output($arr);
+    echo "]\n";
+}
+$masMul = [2, 5, 3, 9];
+$resul = ($masMul[0] * $masMul[1]) + ($masMul[2] * $masMul[3]);
+echo $resul, "\n";
+$user = ['name' => 'Vanya ', 'surname' => 'Shitkin ', 'patronymic' => 'Vasilyevich '];
+echo $user['surname'], $user['name'], $user['patronymic'],"\n";
+$date = ['year'=>2024, 'month'=> 3, 'day'=> 9];
+echo $date['year'],'-', $date['month'],'-', $date['day'], "\n";
+$arr = ['a', 'b', 'c', 'd', 'e'];
+echo count($arr),"\n";
+echo $arr[count($arr)-1],' ', $arr[count($arr)-2],"\n";
+
+
+
 
 
