@@ -211,6 +211,44 @@ $arr = ['a', 'b', 'c', 'd', 'e'];
 echo count($arr),"\n";
 echo $arr[count($arr)-1],' ', $arr[count($arr)-2],"\n";
 
+echo "\n18.\n";
+function  greaterThan10($a, $b): bool
+{
+    return (10<$a+$b);
+}
+echo greaterThan10(5, 5),"\n";
+//if/else isn't necessary
+function equality($a, $b): bool
+{
+    return ($a==$b);
+}
+echo greaterThan10(5, 5),"\n";
+$test = 0;
+if (!$test) echo "Verno\n";
+$age = 93;
+while (true) {
+    if (10 > $age){
+        echo "age is <10\n";
+        break;
+    }
+    if (99 < $age){
+        echo "age is >99\n";
+        break;
+    }
+    $ans = $age % 10 + ($age/10)%10;
+    if (10 > $ans ) {
+        echo "age sum is one digit\n";
+        break;
+    }
+    echo "age sum is two digit\n";
+    break;
+}
+$arr = [4,2,565];
+if (3 == count($arr)) echo $arr[0] + $arr[1] + $arr[2], "\n";
+
+
+
+
 
 
 
