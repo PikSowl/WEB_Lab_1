@@ -39,16 +39,16 @@ $answer -= $my_num;
 echo $answer, "\n";
 
 echo "\n14.\n";
-echo "%) \n";
+echo "%)\n";
 $a=10;
 $b=3;
 echo $a%$b, "\n";
-if ($a%$b == 0) echo "divisible\n";
+if ($a%$b === 0) echo "divisible\n";
 else echo "divisible with remains ", $a%$b, "\n";
 $b -= 1;
-if ($a%$b == 0) echo "divisible\n";
+if ($a%$b === 0) echo "divisible\n";
 else echo "divisible with remains ", $a%$b, "\n";
-echo "Sqrt, pow) \n";
+echo "Sqrt, pow)\n";
 $st = pow(2,10);
 echo $st, "\n", sqrt(245), "\n";
 $arr =[4,2,5,19,13,0,10];
@@ -57,14 +57,14 @@ foreach ($arr as $i) {
     $ans += pow($i,2);
 }
 echo sqrt($ans), "\n";
-echo "Round, ceil, floor) \n";
+echo "Round, ceil, floor)\n";
 echo round(sqrt(379), 0), ', ', round(sqrt(379), 1), ', ', round(sqrt(379), 2), "\n";
 $assoc = ['ceil'=>ceil(sqrt(587)),'floor'=>floor(sqrt(587))];
 echo $assoc['ceil'],', ', $assoc['floor'], "\n";
-echo "Min, max) \n";
+echo "Min, max)\n";
 $numbers = [4, -2, 5, 19, -130, 0, 10];
 echo min($numbers),', ',max($numbers), "\n";
-echo "Random) \n";
+echo "Random)\n";
 echo rand(1,100), "\n";
 $randArr = [];
 for($i=0; 10 > $i; $i++){
@@ -72,7 +72,7 @@ for($i=0; 10 > $i; $i++){
 }
 output($randArr);
 echo "\n";
-echo "Abs) \n";
+echo "Abs)\n";
 $a = 3;
 $b = 100;
 echo abs($a - $b), "\n";
@@ -85,19 +85,19 @@ for($i=0; count($numbers) > $i; $i++){
 }
 output($numbers);
 echo "\n";
-echo "Other) \n";
+echo "Other)\n";
 $larva = 64;
 $div = 0;
 $divs = [];
 while($div < $larva){
     $div += 1;
-    if($larva % $div == 0) $divs[] = $div;
+    if($larva % $div === 0) $divs[] = $div;
 }
 var_dump($divs);
 $mas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 $sum = 0;
 $count = 0;
-while(10 >= $sum){
+while(11 > $sum){
     $sum += $mas[$count];
     $count++;
 }
@@ -136,9 +136,12 @@ echo cut("I'm so tired of this, it's unbelievable, like I want to go outside, bu
 $mas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 function output($array, $count = 0): null
 {
-    echo $array[$count], ' ';
+    echo $array[$count];
     $count++;
-    if (count($array)>$count) output($array, $count);
+    if (count($array)>$count) {
+        echo ' ';
+        output($array, $count);
+    }
     return null;
 }
 output($mas);
@@ -212,17 +215,17 @@ echo count($arr),"\n";
 echo $arr[count($arr)-1],' ', $arr[count($arr)-2],"\n";
 
 echo "\n18.\n";
-function  greaterThan10($a, $b): bool
+function greaterThan10($a, $b): bool
 {
-    return (10<$a+$b);
+    return (10<($a+$b));
 }
-echo greaterThan10(5, 5),"\n";
+echo greaterThan10(6, 5),"\n";
 //if/else isn't necessary
 function equality($a, $b): bool
 {
-    return ($a==$b);
+    return ($a===$b);
 }
-echo greaterThan10(5, 5),"\n";
+echo equality(5, 5),"\n";
 $test = 0;
 if (!$test) echo "Verno\n";
 $age = 93;
@@ -235,7 +238,7 @@ while (true) {
         echo "age is >99\n";
         break;
     }
-    $ans = $age % 10 + ($age/10)%10;
+    $ans = $age % 10 + intval($age/10)%10;
     if (10 > $ans ) {
         echo "age sum is one digit\n";
         break;
